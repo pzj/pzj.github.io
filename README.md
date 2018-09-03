@@ -1,6 +1,6 @@
 ### 我的博客
 
-地址：[http://pzhjie.com](http://pzhjie.com)
+地址：[http://pengzhangjie.com](http://pengzhangjie.com)
 
 ### 安装说明
 
