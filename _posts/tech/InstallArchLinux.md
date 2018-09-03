@@ -1,3 +1,11 @@
+---
+layout: post
+title: ArchLinux安装
+category: 技术
+tags: archlinux
+description: ArchLinux安装
+---
+
 ### ArchLinux安装
 
 Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安装ArchLinux的过程。
