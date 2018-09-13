@@ -10,27 +10,9 @@ description: ArchLinux安装
 
 Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安装ArchLinux的过程。
 
-[1.准备](#1)
-　[1.1二级目录](#1.1)
-　　[1.1.1三级目录](#1.1.1)
+1. 加载ArchLinux ISO镜像文件
 
-[2.安装](#2)
-
-[2.尾声](#2)
-1. binutils包
-2. net-tools
-3. sysstat
-
-<h2 id='1'> 一级目录 </h2>
-
-<h4 id='1.1'> 二级目录 </h4>
-
-<h5 id='1.1.1'> 三级目录 </h5>
-
-作者：高天林
-链接：https://www.zhihu.com/question/21907056/answer/94041510
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+2. 
 
 #### 
 
