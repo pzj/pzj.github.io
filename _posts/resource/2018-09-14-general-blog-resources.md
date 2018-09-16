@@ -14,5 +14,5 @@ description: 博客资源
 
 ### 陈皓的博客
 
-- [酷壳](https://coolshell.cn）
+- [酷壳](https://coolshell.cn)
 - [左耳听风](https://time.geekbang.org/column/intro/48)
