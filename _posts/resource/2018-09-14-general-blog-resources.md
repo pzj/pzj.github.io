@@ -1,32 +1,18 @@
 ---
 layout: post
-title: 我常看的IT博客
+title: 我常看的IT网站
 category: 资源
-tags: 博客
-description: 博客资源
+tags: 
+description: 
 ---
 
-### 王垠
+### 博客
 
-- [地址](http://www.yinwang.org)
-
----
-
-### 陈皓的博客
-
-- [酷壳](https://coolshell.cn)
+- [王垠](http://www.yinwang.org)
+- [王垠历史文章](http://yinwang0.lofter.com/view)
+- [酷壳网](https://coolshell.cn)
 - [左耳听风](https://time.geekbang.org/column/intro/48)
-
-### 云风
-
----
-
-- [博客](https://blog.codingnow.com/)
-
-### Brendan Gregg
-
-Linux性能优化的大牛。
-
+- [云风](https://blog.codingnow.com/)
 - [Brendan Gregg](http://www.brendangregg.com/)
 - [冰河](http://tianchunbinghe.blog.163.com/)
 - [银河里的星星](http://duanple.com/)
@@ -34,6 +20,28 @@ Linux性能优化的大牛。
 - [栋哥](https://liuyandong.com/)
 - [登州知府](https://weibo.com/bnuhero?topnav=1&wvr=6&topsug=1&is_all=1)
 - [廖雪峰](https://www.liaoxuefeng.com/)
+- [负暄琐话](https://blog.csdn.net/g9yuayon)
+- [李杀](http://xahlee.org/)
+- [CatKang](http://catkang.github.io/)
+- [刘未鹏](http://mindhacks.cn/)
+- [菜菜博士](https://microcai.org/)
+- [池建强](http://macshuo.com/)
+- [何登成](http://hedengcheng.com/)
+- [轮子哥](http://www.cppblog.com/vczh/category/7351.html)
+- [落落-SQL调优](https://blog.csdn.net/robinson1988/)
+- [孟岩](https://blog.csdn.net/myan/article/category/333884?viewmode=contents)
+- [章炎](https://dirtysalt.github.io/html/index.html)
+- [冯大辉](http://dbanotes.net/)
+- [tonybai](https://tonybai.com/articles/)
+- [geekan](http://www.anwcl.com/wordpress/)
+- [Bjarne Stroustrup](http://www.stroustrup.com/)
+- [美团点评技术团队](https://tech.meituan.com/)
+- [奇虎360技术团队](http://blogs.360.cn/)
+- [PingCAP](http://blogs.360.cn/)
+- [三十重围](http://www.heguangnan.com/)
+- [四火的唠叨](http://www.raychase.net/)
+- [timyang](https://timyang.net/)
+
 
 ### IT News
 
