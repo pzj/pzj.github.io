@@ -44,7 +44,11 @@ description:
 - [winter-cn](https://www.cnblogs.com/winter-cn/)
 - [yebangyu](http://www.yebangyu.org/)
 - [danielw](http://danielw.cn/)
-
+- [一块积木](https://blog.csdn.net/goodboy1881)
+- [结构之法](https://blog.csdn.net/v_JULY_v/article/list/2)
+- [许式伟](http://xushiwei.com/)
+- [顾路](http://gulu-dev.com/)
+- [skywind](http://www.skywind.me/blog/)
 
 ### IT News
 
@@ -52,12 +56,10 @@ description:
 - [开发者头条](https://toutiao.io/)
 - [Startup News](http://news.dbanotes.net/)
 
-### 论坛
+### 论坛
 
 - [V2EX](https://www.v2ex.com/)
 
-
---- 
 ### 播客
 
 - [tearhour](http://teahour.fm/)
