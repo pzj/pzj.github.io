@@ -9,7 +9,7 @@ description:
 ### 博客
 
 - [王垠](http://www.yinwang.org)
-- [王垠历史文章](http://yinwang0.lofter.com/view)
+- [王垠历史文章](http://yinwang0.lofter.com/view)
 - [酷壳网](https://coolshell.cn)
 - [左耳听风](https://time.geekbang.org/column/intro/48)
 - [云风](https://blog.codingnow.com/)
@@ -35,7 +35,7 @@ description:
 - [tonybai](https://tonybai.com/articles/)
 - [geekan](http://www.anwcl.com/wordpress/)
 - [Bjarne Stroustrup](http://www.stroustrup.com/)
-- [美团点评技术团队](https://tech.meituan.com/)
+- [美团点评技术团队](https://tech.meituan.com/)
 - [奇虎360技术团队](http://blogs.360.cn/)
 - [PingCAP](http://blogs.360.cn/)
 - [三十重围](http://www.heguangnan.com/)
