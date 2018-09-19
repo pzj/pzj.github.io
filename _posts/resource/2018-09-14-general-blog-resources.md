@@ -37,7 +37,6 @@ description:
 - [Bjarne Stroustrup](http://www.stroustrup.com/)
 - [美团点评技术团队](https://tech.meituan.com/)
 - [奇虎360技术团队](http://blogs.360.cn/)
-- [PingCAP](http://blogs.360.cn/)
 - [三十重围](http://www.heguangnan.com/)
 - [四火的唠叨](http://www.raychase.net/)
 - [timyang](https://timyang.net/)
