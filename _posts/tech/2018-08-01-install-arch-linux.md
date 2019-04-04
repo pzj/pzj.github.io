@@ -16,6 +16,9 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 
 # 安装
 
+打开vwamre加载镜像，创建虚拟机
+![cover](image/1.jpg)
+
 添加--force参数就好了
 grub-install --force /dev/sda
 
