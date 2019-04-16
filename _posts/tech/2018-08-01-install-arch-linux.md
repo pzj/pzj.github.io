@@ -22,6 +22,16 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 添加--force参数就好了
 grub-install --force /dev/sda
 
+查看目前分区情况
+# fdisk -l
+
+# cfdisk /dev/sda
+将硬盘分为三个区 sda1 sda2 sda3
+
+格式化分区
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda2
+mkfs.ext4 /dev/sda3
 
 # grub-install /dev/sda
 /usr/sbin/grub-setup: warn: This GPT partition label has no BIOS Boot Partition; embedding won't be possible!.
@@ -157,3 +167,9 @@ pacman -Sd abc |忽略依赖性问题，安装包abc
 pacman -Su --ignore foo |升级时不升级包foo
 pacman -Sg abc |查询abc这个包组包含的软件包
 pacman -R $(pacman -Qdtq) |清除无用的包
+
+
+sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
+
+sudo pacman -Sy net-tools
+sudo pacman -Sy sysstat
