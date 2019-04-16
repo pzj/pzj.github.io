@@ -8,30 +8,123 @@ description: ArchLinux安装
 
 Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安装ArchLinux的过程。
 
-# 准备
+## 准备
 
 1. [下载iso镜像文件](https://www.archlinux.org/download/)
 2. [官方安装文档(中文)](https://wiki.archlinux.org/index.php/Installation_guide_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29)
 3. 安装Vmware
 
-# 安装
+## 启动虚拟机
 
 打开vwamre加载镜像，创建虚拟机
 ![cover](image/1.jpg)
 
-添加--force参数就好了
-grub-install --force /dev/sda
-
 查看目前分区情况
+```
 # fdisk -l
+```
 
+使用cfdisk进行分区
+```
 # cfdisk /dev/sda
+```
 将硬盘分为三个区 sda1 sda2 sda3
+![cover](image/2.jpg)
 
 格式化分区
-mkfs.ext4 /dev/sda1
-mkfs.ext4 /dev/sda2
-mkfs.ext4 /dev/sda3
+```
+# mkfs.ext4 /dev/sda1
+# mkfs.ext4 /dev/sda2
+# mkswap /dev/sda3
+```
+
+挂载分区
+共分3个区：
+
+| 类型 | 大小 | 挂载点
+|---|---|---|
+|ext4|4GB|/|
+|ext4|5GB|/home
+|swap|1GB|-
+```
+# mount /dev/sda1 /mnt
+# mkdir /mnt/home
+# monut /dev/sda2 /mnt/home
+# swapon /dev/sda3
+```
+
+下载archlinux基础包
+```
+# pacstrap /mnt base base-devel 
+```
+生成fstab表
+```
+# genfstab -p /mnt >> /mnt/etc/fstab
+```
+切换根目录至新系统
+```
+# arch-chroot /mnt
+```
+## 初始设置
+设置主机名
+```
+# echo pzhjie-arch > /etc/hostname
+```
+设置时区
+```
+# ln -sf /usr/share/zoneinfo/Asia/Macau /etc/localtime
+```
+
+在/etc/locale.gen中反注释需要的locales，然后运行命令生成locales
+```
+# locale-gen
+```
+设置locale偏好
+```
+# echo LANG=en_US.UTF-8
+```
+创建初始RAM disk
+```
+# mkinitcpio -p linux
+```
+创建root密码
+```
+# passwd
+```
+
+##  安装引导器
+
+下载并安装grub
+```
+# pacman -S grub
+```
+
+安装grub至硬盘
+```
+# grub-install --recheck /dev/sda
+报错则添加"--force"参数就好了
+# grub-install --force /dev/sda
+```
+创建配置文件
+```
+# grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## 重启至新系统
+返回安装环境
+```
+# exit
+```
+重新启动
+```
+# reboot
+```
+
+## 安装完成
+
+
+
+
 
 # grub-install /dev/sda
 /usr/sbin/grub-setup: warn: This GPT partition label has no BIOS Boot Partition; embedding won't be possible!.
