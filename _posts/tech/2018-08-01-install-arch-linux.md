@@ -44,18 +44,41 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 | 类型 | 大小 | 挂载点
 |---|---|---|
 |ext4|4GB|/|
-|ext4|5GB|/home
-|swap|1GB|-
+|ext4|5GB|/home|
+|swap|1GB|-|
 ```
 # mount /dev/sda1 /mnt
 # mkdir /mnt/home
-# monut /dev/sda2 /mnt/home
+# mount /dev/sda2 /mnt/home
 # swapon /dev/sda3
 ```
 
 下载archlinux基础包
+
+先配置国内的镜像源
 ```
-# pacstrap /mnt base base-devel 
+用 nano 打开 /etc/pacman.d/mirrorlist
+
+https://www.archlinux.org/mirrorlist/all/
+## China
+#Server = http://mirrors.163.com/archlinux/$repo/os/$arch
+#Server = http://mirror.lzu.edu.cn/archlinux/$repo/os/$arch
+#Server = http://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch
+#Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch
+#Server = http://mirrors.shu.edu.cn/archlinux/$repo/os/$arch
+#Server = https://mirrors.shu.edu.cn/archlinux/$repo/os/$arch
+#Server = https://mirrors.shu6.edu.cn/archlinux/$repo/os/$arch
+#Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch
+#Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+#Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+#Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+#Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+#Server = https://mirrors.xjtu.edu.cn/archlinux/$repo/os/$arch
+#Server = http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch
+然后用 pacman -Syy 刷新一下软件包数据库
+```
+```
+# pacstrap /mnt base base-devel  
 ```
 生成fstab表
 ```
@@ -65,15 +88,27 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 ```
 # arch-chroot /mnt
 ```
+
 ## 初始设置
+选择安装常用软件包
+```
+ pacman -S sudo vim net-tools sysstat net-tools openssh binutils git networkmanager
+ systemctl enable NetworkManager
+```
 设置主机名
 ```
 # echo pzhjie-arch > /etc/hostname
 ```
 设置时区
 ```
-# ln -sf /usr/share/zoneinfo/Asia/Macau /etc/localtime
+# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
+
+设置时间标准 为 UTC，并调整 时间漂移
+```
+# hwclock --systohc --utc
+```
+
 
 在/etc/locale.gen中反注释需要的locales，然后运行命令生成locales
 ```
@@ -102,7 +137,9 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 安装grub至硬盘
 ```
 # grub-install --recheck /dev/sda
-报错则添加"--force"参数就好了
+```
+报错:/usr/sbin/grub-setup: error: will not proceed with blocklists. 则添加"--force"参数就好了
+```
 # grub-install --force /dev/sda
 ```
 创建配置文件
@@ -121,9 +158,21 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 ```
 
 ## 安装完成
+配置dns
 
+echo nameserver 8.8.8.8 > /etc/resolv.conf
 
+sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
 
+>nano /etc/rc.conf
+
+在这个文件中添加：
+
+>interface = eth0
+
+保存退出之后，敲入命令
+
+>dhcpcd
 
 
 # grub-install /dev/sda
@@ -200,7 +249,7 @@ grub-install --force /dev/sda
 
 # passwd horo
 
-net-tools openssh binutils
+
 
 18878
 17610
@@ -236,6 +285,7 @@ genpac -c ~/.pac/config.ini
 
 命令 | 解释
 ---- | ---
+pacman -Syy  | 仅更新源
 pacman -Sy abc | 和源同步后安装名为abc的包
 pacman -S abc |  从本地数据库中得到abc的信息，下载安装abc包
 pacman -Sf abc |  #强制安装包abc
@@ -261,8 +311,4 @@ pacman -Su --ignore foo |升级时不升级包foo
 pacman -Sg abc |查询abc这个包组包含的软件包
 pacman -R $(pacman -Qdtq) |清除无用的包
 
-
-sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
-
-sudo pacman -Sy net-tools
-sudo pacman -Sy sysstat
+downgrade 
