@@ -94,6 +94,14 @@ https://www.archlinux.org/mirrorlist/all/
 ```
  pacman -S sudo vim net-tools sysstat net-tools openssh binutils git networkmanager
  systemctl enable NetworkManager
+  systemctl enable sshd
+  
+  vim /etc/ssh/sshd_config
+ PermitRootLogin yes
+ 关机
+ systemctl poweroff
+ 重启
+ systemctl reboot
 ```
 设置主机名
 ```
