@@ -92,6 +92,7 @@ https://www.archlinux.org/mirrorlist/all/
 ## 初始设置
 选择安装常用软件包
 ```
+sudo apt install sensible-utils
  pacman -S sudo vim net-tools sysstat net-tools openssh binutils git networkmanager
  systemctl enable NetworkManager
   systemctl enable sshd

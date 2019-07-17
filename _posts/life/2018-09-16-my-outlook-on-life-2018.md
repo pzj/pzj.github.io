@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: -
 title: 2018-我的人生观
 category: 生活
 tags: Essay
