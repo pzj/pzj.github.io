@@ -28,7 +28,7 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 # cfdisk /dev/sda
 ```
 将硬盘分为三个区 sda1 sda2 sda3
-![cover](image/2.jpg)
+其中sda1为系统安装分区，sda2为用户home分区(建议设置至少占总容量50%以上)，sda3为交换分区
 
 格式化分区
 ```
@@ -92,10 +92,12 @@ https://www.archlinux.org/mirrorlist/all/
 选择安装常用软件包
 ```
  pacman -S sudo coreutils dnsutils  vim file sed awk sysstat net-tools openssh binutils git networkmanager
+ 自动启动网络服务与ssh
  systemctl enable NetworkManager
  systemctl enable sshd
   
- vim /etc/ssh/sshd_config
+ vim /etc/ssh/sshd_config 
+ 在最后一行增加
  PermitRootLogin yes
  关机
  systemctl poweroff
@@ -165,13 +167,10 @@ https://www.archlinux.org/mirrorlist/all/
 ```
 
 # 参考链接
-```
 
-http://edward-zhu.github.io/special/os_exp/2015/01/02/exp-1.2.html
+1.  [OS Experiment Special](http://edward-zhu.github.io/special/os_exp/2015/01/02/exp-1.2.html)
 
-https://blog.yoitsu.moe/arch-linux/installing_arch_linux_for_complete_newbies.html
-
-```
+2.  [给 GNU/Linux 萌新的 Arch Linux 安装指南](https://blog.yoitsu.moe/arch-linux/installing_arch_linux_for_complete_newbies.html)
 
 # 总结
 
