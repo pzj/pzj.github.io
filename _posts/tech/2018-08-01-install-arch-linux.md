@@ -16,8 +16,7 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 
 ## 启动虚拟机
 
-打开vwamre加载镜像，创建虚拟机
-![cover](image/1.jpg)
+打开vwamre加载镜像，创建虚拟机，注意配置硬盘大小。
 
 查看目前分区情况
 ```
@@ -57,7 +56,7 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 
 先配置国内的镜像源
 ```
-用 nano 打开 /etc/pacman.d/mirrorlist
+用 vim 打开 /etc/pacman.d/mirrorlist
 
 https://www.archlinux.org/mirrorlist/all/
 ## China
@@ -92,12 +91,11 @@ https://www.archlinux.org/mirrorlist/all/
 ## 初始设置
 选择安装常用软件包
 ```
-sudo apt install sensible-utils
- pacman -S sudo vim net-tools sysstat net-tools openssh binutils git networkmanager
+ pacman -S sudo coreutils dnsutils  vim file sed awk sysstat net-tools openssh binutils git networkmanager
  systemctl enable NetworkManager
-  systemctl enable sshd
+ systemctl enable sshd
   
-  vim /etc/ssh/sshd_config
+ vim /etc/ssh/sshd_config
  PermitRootLogin yes
  关机
  systemctl poweroff
@@ -125,7 +123,7 @@ sudo apt install sensible-utils
 ```
 设置locale偏好
 ```
-# echo LANG=en_US.UTF-8
+# echo LANG=en_US.UTF-8 > /etc/locale.conf
 ```
 创建初始RAM disk
 ```
@@ -166,131 +164,20 @@ sudo apt install sensible-utils
 # reboot
 ```
 
-## 安装完成
-配置dns
-
-echo nameserver 8.8.8.8 > /etc/resolv.conf
-
-sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
-
->nano /etc/rc.conf
-
-在这个文件中添加：
-
->interface = eth0
-
-保存退出之后，敲入命令
-
->dhcpcd
-
-
-# grub-install /dev/sda
-/usr/sbin/grub-setup: warn: This GPT partition label has no BIOS Boot Partition; embedding won't be possible!.
-/usr/sbin/grub-setup: warn: Embedding is not possible.  GRUB can only be installed in this setup by using blocklists.  However, blocklists are UNRELIABLE and their use is discouraged..
-/usr/sbin/grub-setup: error: will not proceed with blocklists.
-
-The problem is because I set the wrong flags for bios_grub partition:
-
-
-#  parted /dev/sda unit s print
-Model: ATA QEMU HARDDISK (scsi)
-Disk /dev/sda: 20971520s
-Sector size (logical/physical): 512B/512B
-Partition Table: gpt
-
-Number  Start   End        Size       File system  Name       Flags
- 1      34s     97656s     97623s     ext2         bios_grub  boot
- 2      98304s  20969471s  20871168s  ext4         rootfs
-
-Flags need set to bios_grub instead of boot:
-
-# parted /dev/sda set 1 bios_grub on
-Information: You may need to update /etc/fstab.                           
-
-# partprobe
-
-#  parted /dev/sda unit s print
-Model: ATA QEMU HARDDISK (scsi)
-Disk /dev/sda: 20971520s
-Sector size (logical/physical): 512B/512B
-Partition Table: gpt
-
-Number  Start   End        Size       File system  Name       Flags
- 1      34s     97656s     97623s     ext2         bios_grub  bios_grub
- 2      98304s  20969471s  20871168s  ext4         rootfs
-
-# grub-install /dev/sda
-Installation finished. No error reported.
+# 参考链接
+```
 
 http://edward-zhu.github.io/special/os_exp/2015/01/02/exp-1.2.html
 
 https://blog.yoitsu.moe/arch-linux/installing_arch_linux_for_complete_newbies.html
 
-root@archiso ~ # genfstab -U /mnt >> /mnt/etc/fstab
-root@archiso ~ # arch-chroot /mnt /bin/bash
-
-# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 要
-
-
-# mkinitcpio -p linux 不要
-
-# UEFI 用户这么做：
-
-# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck
-
-pacstrap /mnt base base-devel iw dialog wpa_supplicant wpa_actiond
-# pacman -S networkmanager
-当然还有 NetworkManager：
-# systemctl enable NetworkManager
-
-添加--force参数就好了
-grub-install --force /dev/sda
-
-新建一个用户
-
--m 为新用户创建一个文件夹，-s 设置用户的登录 Shell
-
-记得最后是用户名就好 😂
-
-# useradd -m -s /bin/bash horo
-
-然后设置密码
-
-# passwd horo
-
-
-
-18878
-17610
-
-visudo
-
-yaourt 只能非root用户执行
-
-git clone https://aur.archlinux.org/package-query.git
-
-git clone https://aur.archlinux.org/yaourt.git
-
-makepkg -si
-
-yaourt unsupported package potentially dangerous
-/Users/pengzhangjie/Documents
-
-
-pacman -Q archlinux-keyring
-pacman -Syu haveged
-systemctl start haveged
-systemctl enable havegedsudo 
-
-rm -fr /etc/pacman.d/gnupg
-pacman-key --init
-pacman-key --populate archlinux
-https://wiki.archlinux.org/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+```
 
 # 总结
 
+……
+
 # 附:pacman命令
-genpac -c ~/.pac/config.ini
 
 命令 | 解释
 ---- | ---
