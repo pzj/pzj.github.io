@@ -91,7 +91,7 @@ https://www.archlinux.org/mirrorlist/all/
 ## 初始设置
 选择安装常用软件包
 ```
- pacman -S sudo coreutils dnsutils  vim file sed awk sysstat net-tools openssh binutils git networkmanager
+ pacman -S sudo coreutils dnsutils  vim file sed awk sysstat net-tools openssh binutils git networkmanager lrzsz 
  配置网络服务与ssh
  systemctl enable NetworkManager
  systemctl enable sshd
