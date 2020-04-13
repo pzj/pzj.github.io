@@ -1,9 +1,9 @@
 ---
 layout: post
-title: [转]Google评分卡
+title: Google评分卡
 category: 技术
-tags: git常用命令
-description: git常用命令
+tags: Google评分卡
+description: Google评分卡
 ---
 
 - 0. you are unfamiliar with the subject area.(你不熟悉主题领域)
