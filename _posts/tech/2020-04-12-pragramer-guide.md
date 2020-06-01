@@ -6,8 +6,6 @@ tags: Google评分卡
 description: Google评分卡
 ---
 
-[toc]
-
 0. you are unfamiliar with the subject area.(你不熟悉主题领域)
 
 1. you can read / understand the most fundamental aspects of the subject area.(你可以阅读/了解主题领域最基本的方面)
