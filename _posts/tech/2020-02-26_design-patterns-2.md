@@ -2,8 +2,8 @@
 layout: post
 title: 设计模式-结构型
 category: 技术
-tags: 设计模式
-description: 设计模式
+tags: 设计模式-结构型
+description: 设计模式-结构型
 ---
 
 
