@@ -13,3 +13,10 @@ description: 设计模式
 4. 接口隔离原则：建立单一接口，接口粒度小
 5. 迪米特原则：最少知道原则，降低类与类之间耦合
 6. 开闭原则：对扩展开放对修改关闭
+
+## KISS原则
+Keep It Simple and Stupid 尽量保持简单
+
+## YAGNI原则
+YAGNI 原则的英文全称是：You Ain’t Gonna Need It.
+它的意思是：不要去设计当前用不到的功能；不要去编写当前用不到的代码。
