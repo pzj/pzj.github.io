@@ -2,8 +2,8 @@
 layout: post
 title: 设计模式(创建型)
 category: 技术
-tags: 
-description: 
+tags: 设计模式(创建型)
+description: 设计模式(创建型)
 ---
 
 

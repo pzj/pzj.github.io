@@ -2,8 +2,8 @@
 layout: post
 title: 设计模式(结构型)
 category: 技术
-tags: 
-description:
+tags: 设计模式(结构型)
+description:设计模式(结构型)
 ---
 
 
@@ -13,6 +13,6 @@ description:
 |桥接||
 | 装饰||
 |适配器|||
-|门面||
-|组合|||
+|门面(外观)||
+|组合(组成)|||
 |享元||
