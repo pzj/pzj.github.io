@@ -1,16 +1,16 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id></id>
+  <id>http://0.0.0.0:4000</id>
   <title>章杰的博客</title>
   <subtitle>欢迎访问章杰的博客</subtitle>
-  <updated>2021-01-14T23:09:53+08:00</updated>
+  <updated>2021-01-15T00:12:24+08:00</updated>
   <author>
     <name>pzhjie</name>
-    <uri></uri>
+    <uri>http://0.0.0.0:4000</uri>
   </author>
   <link href="/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="" rel="alternate" type="text/html" />
+  <link href="http://0.0.0.0:4000" rel="alternate" type="text/html" />
   <generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator>
   <rights> © 2021 pzhjie </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -19,21 +19,23 @@
 
   
   <entry>
-    <title>C++的编译链接过程</title>
-    <link href="/posts/c++-build-process/" rel="alternate" type="text/html" title="C++的编译链接过程" />
-    <published>2021-01-09T00:00:00+08:00</published>
+    <title>Customize the Favicon</title>
+    <link href="http://0.0.0.0:4000/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
+    <published>2019-08-11T00:34:00+08:00</published>
   
-    <updated>2021-01-09T00:00:00+08:00</updated>
+    <updated>2019-08-11T00:34:00+08:00</updated>
   
-    <id>/posts/c++-build-process/</id>
-    <content src="/posts/c++-build-process/" />
+    <id>http://0.0.0.0:4000/posts/customize-the-favicon/</id>
+    <content src="http://0.0.0.0:4000/posts/customize-the-favicon/" />
     <author>
       <name>pzhjie</name>
     </author>
 
   
     
-    <category term="技术" />
+    <category term="Blogging" />
+    
+    <category term="Tutorial" />
     
   
 
@@ -45,18 +47,13 @@
 
 
 
-      在linux环境下开发C++时，我们没有在windows平台那么强大的VS，理解编译、链接的原理和过程对于linux C++程序来说是一项基本功。本来着重讨论C++的编译链接模型。
+      In Chirpy, the image files of Favicons are placed in assets/img/favicons/. You may need to replace them with your own. So let’s see how to customize these Favicons.
 
-将代码转变为可执行程序的过程大致可分为如下阶段：预编译，编译和链接。
+With a square image (PNG, JPG or GIF) in hand, open the site Favicon &amp;amp; App Icon Generator and upload your original image.
 
-预编译过程主要处理那些源代码文件中的以“#”开始的预编译指令。比如“#include”、”#define”等，主要的处理规则如下：
-1.将所有的#define删除，并展开所有的宏定义
-2.处理所有的预编译指令，比如#if,#ifdef等
-3.处理#include预处理指令，将被包含的文件插入到该预编译介绍信的位置。该过程是递归的，所有包含的文件都将插入。
-4.删除所有的注释//与/*/区域
-5.添加行号和文件名标识。例如__LINE__
-6.保留所有的#pragma编译器指令，因为编译器需要使用。
-　　提示，GCC中可使用-E来指示...
+
+
+Click button Create Favicon and wait a moment for the website to generate the icons of various sizes a...
     </summary>
   
 
@@ -64,19 +61,23 @@
 
   
   <entry>
-    <title>shell技巧</title>
-    <link href="/posts/shell-skill/" rel="alternate" type="text/html" title="shell技巧" />
-    <published>2020-12-29T00:00:00+08:00</published>
+    <title>Getting Started</title>
+    <link href="http://0.0.0.0:4000/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
+    <published>2019-08-09T20:55:00+08:00</published>
   
-    <updated>2020-12-29T00:00:00+08:00</updated>
+    <updated>2019-08-09T20:55:00+08:00</updated>
   
-    <id>/posts/shell-skill/</id>
-    <content src="/posts/shell-skill/" />
+    <id>http://0.0.0.0:4000/posts/getting-started/</id>
+    <content src="http://0.0.0.0:4000/posts/getting-started/" />
     <author>
       <name>pzhjie</name>
     </author>
 
   
+    
+    <category term="Blogging" />
+    
+    <category term="Tutorial" />
     
   
 
@@ -88,19 +89,16 @@
 
 
 
-      linux后台运行 
-&amp;amp; 要是关闭终端那么脚本也停了，
-加nohup  既使把终端关了，脚本也会跑，是在服务器那运行的。
+      Installation
 
-脚本名称叫test.sh 入参三个: 1 2 3
-运行test.sh 1 2 3后
-$*为”1 2 3”（一起被引号包住）
-$@为”1” “2” “3”（分别被包住）
-$#为3（参数数量）
+Fork Chirpy on GitHub, rename the repository to USERNAME.github.io (where USERNAME is your GitHub username), and then open terminal and clone the fork to local by:
 
-Makefile有三个非常有用的变量。分别是$@，$^，$&amp;lt;代表的意义分别是：
-$@–目标文件，$^–所有的依赖文件，$&amp;lt;–第一个依赖文件
+$ git clone https://github.com/USERNAME/USERNAME.github.io.git -b master --single-branch
 
+
+Setting up the local envrionment
+
+If you would like to run or build the project on your local machine, please follow the Jekyll...
     </summary>
   
 
@@ -108,19 +106,23 @@ $@–目标文件，$^–所有的依赖文件，$&amp;lt;–第一个依赖文�
 
   
   <entry>
-    <title>深以为然的话</title>
-    <link href="/posts/moto-list/" rel="alternate" type="text/html" title="深以为然的话" />
-    <published>2020-12-28T00:00:00+08:00</published>
+    <title>Writing a New Post</title>
+    <link href="http://0.0.0.0:4000/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
+    <published>2019-08-08T14:10:00+08:00</published>
   
-    <updated>2020-12-28T00:00:00+08:00</updated>
+    <updated>2019-08-08T14:10:00+08:00</updated>
   
-    <id>/posts/moto-list/</id>
-    <content src="/posts/moto-list/" />
+    <id>http://0.0.0.0:4000/posts/write-a-new-post/</id>
+    <content src="http://0.0.0.0:4000/posts/write-a-new-post/" />
     <author>
       <name>pzhjie</name>
     </author>
 
   
+    
+    <category term="Blogging" />
+    
+    <category term="Tutorial" />
     
   
 
@@ -132,26 +134,19 @@ $@–目标文件，$^–所有的依赖文件，$&amp;lt;–第一个依赖文�
 
 
 
-      
-  
-    一个知识越贫乏的人，越是拥有一种莫名其妙的勇气和自豪感。因为知识越贫乏，你所相信的东西就越绝对，因为你根本没有听过与此相对立的观点。夜郎自大是无知者、好辩者的天性。
-  
-  
-    不要轻易地去论断他人，因为我们的认识能力是有限的
-  
-  
-    不要过分放纵自己，因为快乐来得越容易越廉价，就越不能长久
-  
-  
-    不要沉溺在对结果没有直接帮助只是因为自己遭受了一些痛苦的行为中，误以为那就是努力
-  
-  
-    这些年我一直提醒自己一件事情，千万不要自己感动自己。大部分人看似的努力，不过是愚蠢导致的。什么熬夜看书到天亮，连续几天只睡几小时，多久没放假了，如果这些东西也值得夸耀，那么富士康流水线上任何一个人都比你努力多了。人难免天生有自怜的情绪，唯有时刻保持清醒，才能看清真正的价值在哪里
-  
-  
-    不要猜测别人动机，而要看别人做的事
-  
-...
+      Naming and Path
+
+Create a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts/ of the root directory. Please note that the EXTENSION must be one of md and markdown.
+
+Front Matter
+
+Basically, you need to fill the Front Matter as below at the top of the post:
+
+---
+title: TITLE
+date: YYYY-MM-DD HH:MM:SS +/-TTTT
+categories: [TOP_CATEGORIE, SUB_CATEGORIE]
+tags: [TAG]     # TAG names s...
     </summary>
   
 
@@ -159,21 +154,23 @@ $@–目标文件，$^–所有的依赖文件，$&amp;lt;–第一个依赖文�
 
   
   <entry>
-    <title>设计模式(行为型)</title>
-    <link href="/posts/design-patterns-structure/" rel="alternate" type="text/html" title="设计模式(行为型)" />
-    <published>2020-12-17T00:00:00+08:00</published>
+    <title>Text and Typography</title>
+    <link href="http://0.0.0.0:4000/posts/text-and-typography/" rel="alternate" type="text/html" title="Text and Typography" />
+    <published>2019-08-08T11:33:00+08:00</published>
   
-    <updated>2020-12-17T00:00:00+08:00</updated>
+    <updated>2019-08-08T11:33:00+08:00</updated>
   
-    <id>/posts/design-patterns-structure/</id>
-    <content src="/posts/design-patterns-structure/" />
+    <id>http://0.0.0.0:4000/posts/text-and-typography/</id>
+    <content src="http://0.0.0.0:4000/posts/text-and-typography/" />
     <author>
       <name>pzhjie</name>
     </author>
 
   
     
-    <category term="技术" />
+    <category term="Blogging" />
+    
+    <category term="Demo" />
     
   
 
@@ -185,125 +182,31 @@ $@–目标文件，$^–所有的依赖文件，$&amp;lt;–第一个依赖文�
 
 
 
-      
-  
-    
-      中文名
-      英文名
-      适应场景
-    
-  
-  
-    
-      观察者
-      Observer
-       
-    
-    
-      模板
-      Template
-       
-    
-    
-      策略
-      Strategy
-       
-    
-    
-      职责链
-      Chain of Responsibility
-       
-    
-    
-      状态
-      State
-       
-    
-    
-      迭代器
-      Iterator
-       
-    
-    
-      访问者
-      Visitor
-       
-    
-    
-      备忘录
-      Memento
-       
-...
-    </summary>
-  
+      This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.
 
-  </entry>
+Titles
 
-  
-  <entry>
-    <title>设计模式(结构型)</title>
-    <link href="/posts/design-patterns-behavior/" rel="alternate" type="text/html" title="设计模式(结构型)" />
-    <published>2020-12-01T00:00:00+08:00</published>
-  
-    <updated>2020-12-01T00:00:00+08:00</updated>
-  
-    <id>/posts/design-patterns-behavior/</id>
-    <content src="/posts/design-patterns-behavior/" />
-    <author>
-      <name>pzhjie</name>
-    </author>
+H1 - heading
 
-  
-    
-    <category term="技术" />
-    
-  
+H2 - heading
 
-  
-    <summary>
-      
+H3 - heading
+
+H4 - heading
 
 
 
+Paragraph
 
+I wandered lonely as a cloud
 
-      
-  
-    
-      中文名
-      英文名
-      描述
-      适应场景
-    
-  
-  
-    
-      代理
-      Proxy
-      为其它对象提供一个代理以控制对这个对象的访问
-      让你能够提供对象的替代品或其占位符
-    
-    
-      桥接
-      Bridge
-      将对象部分与它的实现部分分离，使它们都可以独立地变化
-       
-    
-    
-      装饰
-      Decorator
-      动态地给一个对象添加一些额外的职责
-      Java IO 类库
-    
-    
-      适配器
-      Adapter
-      奖一个类的接口转换成客户希望的另一个接口
-      在 Java 日志中的应用
-    
-    
-      门面(外观)
-     ...
+That floats on high o’er vales and hills,
+
+When all at once I saw a crowd,
+
+A host, of golden daffodils;
+
+Beside the lake, beneath the t...
     </summary>
   
 

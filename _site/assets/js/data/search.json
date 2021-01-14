@@ -1,318 +1,63 @@
 [
   
   {
-    "title": "C++的编译链接过程",
-    "url": "/posts/c++-build-process/",
-    "categories": "技术",
-    "tags": "",
-    "date": "2021-01-09 00:00:00 +0800",
+    "title": "Customize the Favicon",
+    "url": "/posts/customize-the-favicon/",
+    "categories": "Blogging, Tutorial",
+    "tags": "favicon",
+    "date": "2019-08-11 00:34:00 +0800",
     
 
 
 
 
 
-    "snippet": "在linux环境下开发C++时，我们没有在windows平台那么强大的VS，理解编译、链接的原理和过程对于linux C++程序来说是一项基本功。本来着重讨论C++的编译链接模型。将代码转变为可执行程序的过程大致可分为如下阶段：预编译，编译和链接。预编译过程主要处理那些源代码文件中的以“#”开始的预编译指令。比如“#include”、”#define”等，主要的处理规则如下：1.将所有的#define删除，并展开所有的宏定义2.处理所有的预编译指令，比如#if,#ifdef等3.处理#include预处理指令，将被包含的文件插入到该预编译介绍信的位置。该过程是递归的，所有包含的文件都将插..."
+    "snippet": "In Chirpy, the image files of Favicons are placed in assets/img/favicons/. You may need to replace them with your own. So let’s see how to customize these Favicons.With a square image (PNG, JPG or GIF) in hand, open the site Favicon &amp;amp; App Icon Generator and upload your original image.Clic..."
   },
   
   {
-    "title": "shell技巧",
-    "url": "/posts/shell-skill/",
-    "categories": "",
-    "tags": "",
-    "date": "2020-12-29 00:00:00 +0800",
+    "title": "Getting Started",
+    "url": "/posts/getting-started/",
+    "categories": "Blogging, Tutorial",
+    "tags": "getting started",
+    "date": "2019-08-09 20:55:00 +0800",
     
 
 
 
 
 
-    "snippet": "linux后台运行 &amp;amp; 要是关闭终端那么脚本也停了，加nohup  既使把终端关了，脚本也会跑，是在服务器那运行的。脚本名称叫test.sh 入参三个: 1 2 3运行test.sh 1 2 3后$*为”1 2 3”（一起被引号包住）$@为”1” “2” “3”（分别被包住）$#为3（参数数量）Makefile有三个非常有用的变量。分别是$@，$^，$&amp;lt;代表的意义分别是：$@–目标文件，$^–所有的依赖文件，$&amp;lt;–第一个依赖文件"
+    "snippet": "InstallationFork Chirpy on GitHub, rename the repository to USERNAME.github.io (where USERNAME is your GitHub username), and then open terminal and clone the fork to local by:$ git clone https://github.com/USERNAME/USERNAME.github.io.git -b master --single-branchSetting up the local envrionmentIf..."
   },
   
   {
-    "title": "深以为然的话",
-    "url": "/posts/moto-list/",
-    "categories": "",
-    "tags": "",
-    "date": "2020-12-28 00:00:00 +0800",
+    "title": "Writing a New Post",
+    "url": "/posts/write-a-new-post/",
+    "categories": "Blogging, Tutorial",
+    "tags": "writing",
+    "date": "2019-08-08 14:10:00 +0800",
     
 
 
 
 
 
-    "snippet": "      一个知识越贫乏的人，越是拥有一种莫名其妙的勇气和自豪感。因为知识越贫乏，你所相信的东西就越绝对，因为你根本没有听过与此相对立的观点。夜郎自大是无知者、好辩者的天性。        不要轻易地去论断他人，因为我们的认识能力是有限的        不要过分放纵自己，因为快乐来得越容易越廉价，就越不能长久        不要沉溺在对结果没有直接帮助只是因为自己遭受了一些痛苦的行为中，误以为那就是努力        这些年我一直提醒自己一件事情，千万不要自己感动自己。大部分人看似的努力，不过是愚蠢导致的。什么熬夜看书到天亮，连续几天只睡几小时，多久没放假了，如果这些东西也值得夸耀，那..."
+    "snippet": "Naming and PathCreate a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts/ of the root directory. Please note that the EXTENSION must be one of md and markdown.Front MatterBasically, you need to fill the Front Matter as below at the top of the post:---title: TITLEdate: YYYY-MM-DD..."
   },
   
   {
-    "title": "设计模式(行为型)",
-    "url": "/posts/design-patterns-structure/",
-    "categories": "技术",
-    "tags": "设计模式(行为型)",
-    "date": "2020-12-17 00:00:00 +0800",
+    "title": "Text and Typography",
+    "url": "/posts/text-and-typography/",
+    "categories": "Blogging, Demo",
+    "tags": "typography",
+    "date": "2019-08-08 11:33:00 +0800",
     
 
 
 
 
 
-    "snippet": "            中文名      英文名      适应场景                  观察者      Observer                     模板      Template                     策略      Strategy                     职责链      Chain of Responsibility                     状态      State                     迭代器      Iterator                     访问者     ..."
-  },
-  
-  {
-    "title": "设计模式(结构型)",
-    "url": "/posts/design-patterns-behavior/",
-    "categories": "技术",
-    "tags": "设计模式(结构型)",
-    "date": "2020-12-01 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "            中文名      英文名      描述      适应场景                  代理      Proxy      为其它对象提供一个代理以控制对这个对象的访问      让你能够提供对象的替代品或其占位符              桥接      Bridge      将对象部分与它的实现部分分离，使它们都可以独立地变化                     装饰      Decorator      动态地给一个对象添加一些额外的职责      Java IO 类库              适配器      Adapter      ..."
-  },
-  
-  {
-    "title": "简化条件表达式",
-    "url": "/posts/refactor_if_else/",
-    "categories": "技术",
-    "tags": "",
-    "date": "2020-11-08 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "程序中经常要写条件式，有的条件逻辑十分复杂，使用如下技巧可以简化条件逻辑：分解条件表达式- 将if段落提炼出来，各自构成一个独立函数- 将then和else段落提炼出来各自构成一个独立函数回调- 根据回调函数不同采取不同的行为，移除if-else利用多态代替条件表达式- 根据对象的不同类型而采取不同的行为case-switch语句- 预计后继会要增加条件判断，提前使用switch语句，避免深层if-else"
-  },
-  
-  {
-    "title": "RabbitMq权限管理",
-    "url": "/posts/RabbitMQ-Privilege/",
-    "categories": "技术",
-    "tags": "RabbitMq权限管理",
-    "date": "2020-09-22 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "概述在RabbitMQ中，用户是访问控制（Access Control）的基本单元，包含用户角色与用户权限二个部分。用户角色是RabbitMQ预置的用户权限组，设置某个角色即获得对应的用户组的权限，使单个用户可以跨越多个vhost进行授权。用户权限是权限控制则是以vhost为单位的，对exchange，queue的操作权限控制，包括配置权限，读写权限。配置权限。RabbitMQ用户角色RabbitMQ角色分为五大类：•	超级管理员(administrator)    可登陆管理控制台(启用management plugin的情况下)，可查看所有的信息，并且可以对用户，策略(policy)..."
-  },
-  
-  {
-    "title": "觉见逻辑错误",
-    "url": "/posts/common_logic_err/",
-    "categories": "生活",
-    "tags": "",
-    "date": "2020-08-02 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "常见逻辑错误  人身攻击-攻击其人而不是其观点：你是个烂人，所以你的观点也是错的。  主观怀疑-因为只是对你而言不容易理解而反对一个观点：这说法太复杂太乱了，一听就不像真的。  诉诸传统-一直都被认为正确的观点就是对的  捡好的说-只使用那些对你的观点有利的论据  转进如风-持续地要求越来越多的证据  举证责任-因为缺少证明而断定一个论述是对的或者错的  以果推因：相关性不等于因果关系  你也一样：提出这论点的人没有按照该论点行动不代表该论点是错的  没有真正的苏格兰人-以提出论点的人不能代码该论点为由指出他是错的  循环论证-以推论的结尾作为开头          因为路步，我成为了运..."
-  },
-  
-  {
-    "title": "2020资源列表",
-    "url": "/posts/list-of-this-year/",
-    "categories": "技术",
-    "tags": "2020资源列表",
-    "date": "2020-06-01 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "教程程序员技术资源分享群内容整理设计模式-refactoringguruGit学习DvaJsReduxJavaScript基础教程ES6教程博客为什么这么设计-面向信仰编程木子"
-  },
-  
-  {
-    "title": "Google评分卡",
-    "url": "/posts/pragramer-guide/",
-    "categories": "技术",
-    "tags": "Google评分卡",
-    "date": "2020-04-12 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "      you are unfamiliar with the subject area.(你不熟悉主题领域)        you can read / understand the most fundamental aspects of the subject area.(你可以阅读/了解主题领域最基本的方面)        ability to implement small changes, understand basic principles and able to figure out additional details with minimal help.(能够实现..."
-  },
-  
-  {
-    "title": "设计模式(创建型)",
-    "url": "/posts/design-patterns-create/",
-    "categories": "技术",
-    "tags": "设计模式(创建型)",
-    "date": "2020-02-26 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "            中文名      英文名      描述      适应场景                  单例      Singleton      保证一个类仅有一个对象，并提供一个访问它的全局访问点      常用，网站计数器，线程池              工厂方法      Factory Method      定义一个用于创建对象的接口，让子类决定将哪一个类实例化，使一个类的实例化延迟到子类      log4j适配不同的log库              抽象工厂      Abstract Factory      提供一个创建一系列相关或相互依赖对象的..."
-  },
-  
-  {
-    "title": "markdown语法",
-    "url": "/posts/markdown_syntax/",
-    "categories": "技术",
-    "tags": "markdown语法",
-    "date": "2020-02-23 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "目录  简介  缩进语法  图片插入  超链接  表格[](#{标题名})1.简介这是我记录学习markdwon语法学习的过程。缩进语法图片插入正常插入图片限制图片大小![cover](https://img12.360buyimg.com/n1/jfs/t490/38/1242617192/495352/88d3c3fc/54c22fd2N0a94f665.jpg)&amp;lt;img src=&quot;https://img12.360buyimg.com/n1/jfs/t490/38/1242617192/495352/88d3c3fc/54c22fd2N0a94f665.jp..."
-  },
-  
-  {
-    "title": "linux学习资源",
-    "url": "/posts/linux-resource/",
-    "categories": "技术",
-    "tags": "tech",
-    "date": "2020-01-15 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "Kali 是一个基于 Debian 的 Linux 发行版。它的目标就是为了简单：在一个实用的工具包里尽可能多的包含渗透和审计工具。"
-  },
-  
-  {
-    "title": "设计模式",
-    "url": "/posts/design-patterns/",
-    "categories": "技术",
-    "tags": "tech",
-    "date": "2020-01-12 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "设计模式六大原则  单一职责原则：一个类只负责职责，尽量做到一个类只有一个行为引起变化  里氏替换原则：子类可以扩展父类的功能，但不能改变父类的功能  依赖倒置原则：面向接口编程，上层模块不应该依赖低层模板，二者应该依赖抽象  接口隔离原则：建立单一接口，接口粒度小  迪米特原则：最少知道原则，降低类与类之间耦合  开闭原则：对扩展开放对修改关闭KISS原则Keep It Simple and Stupid 尽量保持简单YAGNI原则YAGNI 原则的英文全称是：You Ain’t Gonna Need It.它的意思是：不要去设计当前用不到的功能；不要去编写当前用不到的代码。创建型设计..."
-  },
-  
-  {
-    "title": "2020阅读书单",
-    "url": "/posts/book-list-of-2020/",
-    "categories": "读书",
-    "tags": "",
-    "date": "2020-01-01 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "重构与模式理解json解析，json对比高效能人士的七个习惯"
-  },
-  
-  {
-    "title": "2019阅读书单",
-    "url": "/posts/book-list-of-2019/",
-    "categories": "读书",
-    "tags": "",
-    "date": "2019-01-01 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "书单：古今数学思想（套装共3册）"
-  },
-  
-  {
-    "title": "编译静态tmux",
-    "url": "/posts/build_static_tmux/",
-    "categories": "工具",
-    "tags": "tmux, Linux",
-    "date": "2018-09-20 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "起因发现我们公司的跳板机上没有tmux，但是跳板机上的权限很受限，没有root权限，使用其它机机器编译的binary，发现各种依赖的动态库问题，选择静态编译一个tmux程序。过程tmux依赖libevent,先下载最新版的libeventlibeventcd libevent-2.0.22./configure --prefix=/home/pengzhangjie/temp/makemake install下载tmuxtmuxcd tmux-2.0./configure --prefix=/home/iceway/temp/ --enable-static CFLAGS=-I/ho..."
-  },
-  
-  {
-    "title": "Linux性能分析",
-    "url": "/posts/linux-performance-analysis/",
-    "categories": "资源",
-    "tags": "性能",
-    "date": "2018-09-17 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "1. uptime[pengzhangjie]$ uptime 20:11:28 up 148 days,  8:09,  1 user,  load average: 0.08, 0.08, 0.03这个命令显示了要运行的任务（进程）数，通过它能够快速了解系统的平均负载。在Linux上，这些数值既包括正在或准备运行在CPU上的进程，也包括阻塞在uninterruptible I/O（通常是磁盘I/O）上的进程。它展示了资源负载（或需求）的大致情况，不过进一步的解读还有待其它工具的协助。对它的具体数值不用太较真。最右的三个数值分别是1分钟、5分钟、15分钟系统负载的移动平均值。2. dm..."
-  },
-  
-  {
-    "title": "我常看的IT网站",
-    "url": "/posts/general-blog-resources/",
-    "categories": "资源",
-    "tags": "",
-    "date": "2018-09-14 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "博客  王垠  王垠历史文章  酷壳网  左耳听风  云风  Brendan Gregg  冰河  银河里的星星  陈硕  栋哥  登州知府  廖雪峰  负暄琐话  李杀  CatKang  刘未鹏  菜菜博士  池建强  何登成  轮子哥  落落-SQL调优  孟岩  章炎  冯大辉  tonybai  geekan  Bjarne Stroustrup  美团点评技术团队  奇虎360技术团队  三十重围  四火的唠叨  timyang  winter-cn  yebangyu  danielw  一块积木  结构之法  许式伟  顾路  skywindIT News  Hacker..."
-  },
-  
-  {
-    "title": "2018阅读书单",
-    "url": "/posts/book-list-of-2018/",
-    "categories": "读书",
-    "tags": "",
-    "date": "2018-09-01 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "C++语义和性能分析狗东地址从Paxos到Zookeeper分布式一致性原理与实践狗东地址"
-  },
-  
-  {
-    "title": "ArchLinux安装",
-    "url": "/posts/install-arch-linux/",
-    "categories": "技术",
-    "tags": "archlinux",
-    "date": "2018-08-01 00:00:00 +0800",
-    
-
-
-
-
-
-    "snippet": "Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安装ArchLinux的过程。准备  下载iso镜像文件  官方安装文档(中文)  安装Vmware启动虚拟机打开vwamre加载镜像，创建虚拟机，注意配置硬盘大小。查看目前分区情况# fdisk -l使用cfdisk进行分区# cfdisk /dev/sda将硬盘分为三个区 sda1 sda2 sda3其中sda1为系统安装分区，sda2为用户home分区(建议设置至少占总容量50%以上)，sda3为交换分区格式化分区# mkfs.ext4 /dev/sda1# mkfs.ext4 /dev/..."
+    "snippet": "This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.TitlesH1 - headingH2 - headingH3 - headingH4 - headingParagraphI wandered lonely as a cloudThat floats on high o’er vales and hills,When all at o..."
   }
   
 ]
