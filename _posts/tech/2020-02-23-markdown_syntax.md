@@ -18,7 +18,7 @@ description: markdown语法
 [](#{标题名})
 ```
 
-## 1.简介
+## 简介
 
 这是我记录学习markdwon语法学习的过程。
 
