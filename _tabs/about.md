@@ -1,5 +1,5 @@
 ---
-title: About
+title: 关于我
 icon: fas fa-info
 order: 4
 
@@ -11,4 +11,4 @@ order: 4
 ---
 
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+> **Note**: 这是我的个人博客，记录我的技术成长与生活
