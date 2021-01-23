@@ -207,3 +207,48 @@ pacman -Sg abc |查询abc这个包组包含的软件包
 pacman -R $(pacman -Qdtq) |清除无用的包
 
 downgrade 
+
+> 新建一个用户 pzhjie
+useradd -m -G wheel pzhjie
+
+-m：在创建时同时在/home目录下创建一个与用户名同名的文件夹
+-G wheel：-G代表把用户加入一个组
+
+> passwd pzhjie
+
+根据提示输入两次密码就可以了，这是用户的密码
+
+配置 sudo
+
+> pacman -S sudo
+
+sudo本身也是一个软件包，我们可以通过pacman来安装
+
+> chmod +w /etc/sudoers
+
+> vim /etc/sudoers
+
+> chmod -w /etc/sudoers
+
+编辑时找到# %wheel ALL=(ALL)ALL这一行，将前面的#去掉即可,最后记得将配置文件恢复成只读,配置好sudo后，输入reboot命令重启
+
+配置samba
+
+> sudo pacman -S samba
+
+> wget "https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD" -O /etc/samba/smb.conf
+
+> sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+
+在[global]部份中指定的 workgroup 需要对应windows工作组的名称 (默认是 WORKGROUP)
+
+> testparm
+
+> sudo pdbedit -a -u pzhjie
+
+> sudo smbpasswd pzhjie
+
+> sudo systemctl start/enable smb.service nmb.service
+
+[参考-Samba应用](https://github.com/dunwu/linux-tutorial/blob/master/docs/linux/ops/samba.md
+)
