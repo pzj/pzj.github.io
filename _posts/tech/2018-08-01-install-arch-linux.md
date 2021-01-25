@@ -91,7 +91,7 @@ https://www.archlinux.org/mirrorlist/all/
 ## 初始设置
 选择安装常用软件包
 ```
- pacman -S sudo coreutils dnsutils  vim file sed awk sysstat net-tools openssh binutils git networkmanager lrzsz 
+ pacman -S sudo coreutils dnsutils  vim file sed awk sysstat net-tools openssh binutils git networkmanager lrzsz autojump
  配置网络服务与ssh
  systemctl enable NetworkManager
  systemctl enable sshd
@@ -250,5 +250,24 @@ sudo本身也是一个软件包，我们可以通过pacman来安装
 
 > sudo systemctl start/enable smb.service nmb.service
 
-[参考-Samba应用](https://github.com/dunwu/linux-tutorial/blob/master/docs/linux/ops/samba.md
-)
+[参考-Samba应用](https://github.com/dunwu/linux-tutorial/blob/master/docs/linux/ops/samba.md)
+
+### 安装vmware tools收缩磁盘空间
+
+由于操作系统总是先使用未被使用的磁盘(使磁盘的使用均衡)，导致虚拟机磁盘占用越来越大，可使虚拟机工个收缩磁盘（收磁空间前不能有虚拟机快照）
+
+> sudo pacman -S open-vm-tools
+
+安装vmware tools
+
+> sudo vmware-toolbox-cmd disk list
+
+列出所有的磁盘挂载点
+
+> sudo vmware-toolbox-cmd disk wipe /
+
+首先把空闲的空间擦除，以便后续收缩
+
+> sudo vmware-toolbox-cmd disk shrink /
+
+收缩磁盘
