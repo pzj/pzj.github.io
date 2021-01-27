@@ -1,12 +1,13 @@
 ---
 layout: post
 title: 2020资源列表
-category: 技术
-tags: 2020资源列表
-description: 2020资源列表
+category: 资源
+tags: 资源
 ---
 
-## 教程
+# 资源
+
+## 技术
 
 [程序员技术资源分享群内容整理](https://www.notion.so/9667019865984ba5b772cb80f31097b2)
 

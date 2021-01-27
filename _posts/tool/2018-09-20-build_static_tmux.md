@@ -1,5 +1,6 @@
 ---
 title: 编译静态链接tmux
+category: 工具
 tags: [tmux]
 ---
 

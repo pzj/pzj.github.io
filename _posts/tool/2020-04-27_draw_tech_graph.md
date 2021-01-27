@@ -2,8 +2,7 @@
 layout: post
 title: 画技术图
 category: 工具
-tags: 
-description: 画技术图
+tags: [工具]
 ---
 
 ## 技术图制作工具
