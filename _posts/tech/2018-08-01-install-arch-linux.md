@@ -6,9 +6,11 @@ tags: archlinux
 description: ArchLinux安装
 ---
 
-Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安装ArchLinux的过程。
+# 介绍
 
-## 准备
+Archlinux是最好的Linx发行版，它有如下优点：1. 高度的定制化，可以选择安装桌面 2.滚动更新，软件包更新迅速 3.优秀的文档说明。下面是我在vmware上安装ArchLinux的过程(无桌面)。
+
+# 安装
 
 1. [下载iso镜像文件](https://www.archlinux.org/download/)
 2. [官方安装文档(中文)](https://wiki.archlinux.org/index.php/Installation_guide_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29)
@@ -59,6 +61,7 @@ Archlinux是最好的Linx发行版，下面是我在mac上Parallels Desktop安�
 用 vim 打开 /etc/pacman.d/mirrorlist
 
 https://www.archlinux.org/mirrorlist/all/
+
 ## China
 #Server = http://mirrors.163.com/archlinux/$repo/os/$arch
 #Server = http://mirror.lzu.edu.cn/archlinux/$repo/os/$arch
@@ -173,8 +176,74 @@ https://www.archlinux.org/mirrorlist/all/
 2.  [给 GNU/Linux 萌新的 Arch Linux 安装指南](https://blog.yoitsu.moe/arch-linux/installing_arch_linux_for_complete_newbies.html)
 
 # 总结
+    
+创建的无ui的纯命令行linux，内存占用仅为156m,在属主机上vmware cpu占用在1%以下。
 
-……
+# 附：创建用户
+
+> 新建一个用户 pzhjie
+useradd -m -G wheel pzhjie
+
+-m：在创建时同时在/home目录下创建一个与用户名同名的文件夹
+-G wheel：-G代表把用户加入一个组
+
+> passwd pzhjie
+
+根据提示输入两次密码就可以了，这是用户的密码
+
+配置 sudo
+
+> pacman -S sudo
+
+sudo本身也是一个软件包，我们可以通过pacman来安装
+
+> chmod +w /etc/sudoers
+
+> vim /etc/sudoers
+
+> chmod -w /etc/sudoers
+
+编辑时找到# %wheel ALL=(ALL)ALL这一行，将前面的#去掉即可,最后记得将配置文件恢复成只读,配置好sudo后，输入reboot命令重启
+
+# 附：配置samba
+
+> sudo pacman -S samba
+
+> wget "https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD" -O /etc/samba/smb.conf
+
+> sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+
+在[global]部份中指定的 workgroup 需要对应windows工作组的名称 (默认是 WORKGROUP)
+
+> testparm
+
+> sudo pdbedit -a -u pzhjie
+
+> sudo smbpasswd pzhjie
+
+> sudo systemctl start/enable smb.service nmb.service
+
+[参考-Samba应用](https://github.com/dunwu/linux-tutorial/blob/master/docs/linux/ops/samba.md)
+
+# 附：回收虚拟机的磁盘空间
+
+由于操作系统总是先使用未被使用的磁盘(使磁盘的使用均衡)，导致虚拟机磁盘占用越来越大，可使虚拟机工个收缩磁盘（收磁空间前不能有虚拟机快照）
+
+> sudo pacman -S open-vm-tools
+
+安装vmware tools
+
+> sudo vmware-toolbox-cmd disk list
+
+列出所有的磁盘挂载点
+
+> sudo vmware-toolbox-cmd disk wipe /
+
+首先把空闲的空间擦除，以便后续收缩
+
+> sudo vmware-toolbox-cmd disk shrink /
+
+收缩磁盘
 
 # 附:pacman命令
 
@@ -205,69 +274,5 @@ pacman -Sd abc |忽略依赖性问题，安装包abc
 pacman -Su --ignore foo |升级时不升级包foo
 pacman -Sg abc |查询abc这个包组包含的软件包
 pacman -R $(pacman -Qdtq) |清除无用的包
-
-downgrade 
-
-> 新建一个用户 pzhjie
-useradd -m -G wheel pzhjie
-
--m：在创建时同时在/home目录下创建一个与用户名同名的文件夹
--G wheel：-G代表把用户加入一个组
-
-> passwd pzhjie
-
-根据提示输入两次密码就可以了，这是用户的密码
-
-配置 sudo
-
-> pacman -S sudo
-
-sudo本身也是一个软件包，我们可以通过pacman来安装
-
-> chmod +w /etc/sudoers
-
-> vim /etc/sudoers
-
-> chmod -w /etc/sudoers
-
-编辑时找到# %wheel ALL=(ALL)ALL这一行，将前面的#去掉即可,最后记得将配置文件恢复成只读,配置好sudo后，输入reboot命令重启
-
-配置samba
-
-> sudo pacman -S samba
-
-> wget "https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD" -O /etc/samba/smb.conf
-
-> sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
-
-在[global]部份中指定的 workgroup 需要对应windows工作组的名称 (默认是 WORKGROUP)
-
-> testparm
-
-> sudo pdbedit -a -u pzhjie
-
-> sudo smbpasswd pzhjie
-
-> sudo systemctl start/enable smb.service nmb.service
-
-[参考-Samba应用](https://github.com/dunwu/linux-tutorial/blob/master/docs/linux/ops/samba.md)
-
-### 安装vmware tools收缩磁盘空间
-
-由于操作系统总是先使用未被使用的磁盘(使磁盘的使用均衡)，导致虚拟机磁盘占用越来越大，可使虚拟机工个收缩磁盘（收磁空间前不能有虚拟机快照）
-
-> sudo pacman -S open-vm-tools
-
-安装vmware tools
-
-> sudo vmware-toolbox-cmd disk list
-
-列出所有的磁盘挂载点
-
-> sudo vmware-toolbox-cmd disk wipe /
-
-首先把空闲的空间擦除，以便后续收缩
-
-> sudo vmware-toolbox-cmd disk shrink /
-
-收缩磁盘
+pacman-key --populate archlinux | 该命令对 Master Signing Keys 进行验证
+pacman -Sy archlinux-keyring | 更新密钥
