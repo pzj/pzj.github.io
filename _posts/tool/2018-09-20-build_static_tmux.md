@@ -4,9 +4,6 @@ category: 工具
 tags: [tmux]
 ---
 
-### 起因
-
-
 ## 过程
 
 [libevent](http://libevent.org/)
