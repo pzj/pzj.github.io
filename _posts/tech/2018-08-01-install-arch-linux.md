@@ -245,6 +245,38 @@ sudo本身也是一个软件包，我们可以通过pacman来安装
 
 收缩磁盘
 
+# 附：locale设置
+
+> locale -a
+
+列出所有启用的locale
+
+启用一个 Locale 前，需要先生成它. 在 /etc/locale.gen 中取消对应的注释，然后执行 locale-gen. 注释掉某行，则会移除对应的 locale.请启用所有用户都可能使用的 locale 及其变体。
+
+````
+[pzhjie@arch ~]$ locale -a
+locale: Cannot set LC_CTYPE to default locale: No such file or directory
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+locale: Cannot set LC_COLLATE to default locale: No such file or directory
+C
+POSIX
+```
+异常
+
+```
+[pzhjie@arch ~]$ cat /etc/locale.conf
+LANG=en_US.UTF-8
+```
+
+
+取消注释 /etc/locale.gen 的 #en_US.UTF-8 UTF-8，然后执行 sudo locale-gen
+```
+[pzhjie@arch ~]$ locale -a
+C
+en_US.utf8
+POSIX
+```
+
 # 附:pacman命令
 
 命令 | 解释
